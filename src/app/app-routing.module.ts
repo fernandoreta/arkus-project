@@ -8,12 +8,14 @@ import { ComidasComponent } from './menu/comidas/comidas.component';
 import { BebidasComponent } from './bebidas/bebidas.component';
 import { PostresComponent } from './postres/postres.component';
 import { MenuTemplateComponent } from './menu/menu-template/menu-template.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'app-menu',
     component: MenuComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'app-menu-template',

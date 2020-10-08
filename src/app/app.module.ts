@@ -15,6 +15,7 @@ import { PostresComponent } from './postres/postres.component';
 import { MenuTemplateComponent } from './menu/menu-template/menu-template.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ComidasComponent,
     BebidasComponent,
     PostresComponent,
-    MenuTemplateComponent
+    MenuTemplateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
