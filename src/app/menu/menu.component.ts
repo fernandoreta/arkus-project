@@ -28,9 +28,7 @@ export class MenuComponent implements OnInit {
   }
 
   submitForm(productForm: MenuLabels) {
-    console.log(productForm);
     this.productService.addProduct(productForm);
-    alert (productForm.producto + 'Added Succesfully');
   }
 
   ngOnInit() {

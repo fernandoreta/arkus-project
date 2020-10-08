@@ -3,20 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { MenuLabels } from './menu.model';
 import { map } from 'rxjs/operators';
 import { Post } from '../menu/post.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
     providedIn: 'root',
 })
 
 export class ProductService {
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
     // Add product via firebase
     addProduct(menuLabels: MenuLabels) {
-        this.http.post('https://ng-http-2b26c.firebaseio.com/menu.json', menuLabels)
-        .subscribe(response => {
-            console.log(response);
-          });
+        this.http.post('https://ng-http-2b26c.firebaseio.com/arkus-menu.json', menuLabels)
+        .subscribe(() => this.snackBar.open(menuLabels.producto + ' Added', 'Success', { duration: 2000, }));
     }
 
     getProducts() {

@@ -13,6 +13,8 @@ import { ComidasComponent } from './menu/comidas/comidas.component';
 import { BebidasComponent } from './bebidas/bebidas.component';
 import { PostresComponent } from './postres/postres.component';
 import { MenuTemplateComponent } from './menu/menu-template/menu-template.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { MenuTemplateComponent } from './menu/menu-template/menu-template.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
