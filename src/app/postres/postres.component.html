@@ -1,0 +1,10 @@
+<app-menu-template></app-menu-template>
+    
+    <ul class="list-group" *ngFor="let item of loadedFood">
+        <li class="list-group-item" *ngIf="item.categoria === 'postre'">
+            {{ item.categoria }}
+            {{ item.descripcion }}
+            {{ item.producto }}
+        </li>
+    </ul>
+      
