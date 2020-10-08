@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'practice-http'`, () => {
+  it(`should have as title 'arkus-project'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('practice-http');
+    expect(app.title).toEqual('arkus-project');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('practice-http app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('arkus-project app is running!');
   });
 });
