@@ -1,13 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="list-group-item col-sm-4" routerLink="/app-comidas" routerLinkActive="active">
-            COMIDAS
-        </div>
-        <div class="list-group-item col-sm-4" routerLink="/app-bebidas" routerLinkActive="active">
-            BEBIDAS
-            </div>
-        <div class="list-group-item col-sm-4" routerLink="/app-postres" routerLinkActive="active">
-            POSTRES
+        <div
+            *ngFor="let cat of categorias"
+            class="list-group-item col-sm-4 click"
+            [routerLink]="[cat.link]"
+            routerLinkActive="active">
+            {{ cat.name }}
         </div>
     </div>
 </div>

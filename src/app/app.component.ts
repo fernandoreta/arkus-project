@@ -9,6 +9,10 @@ export class AppComponent implements OnInit{
   constructor() {}
   title = 'practice-http';
 
+  tabPanel = [{name: 'AGREGAR', link: '/app-menu'},
+              {name: 'INVENTARIO', link: '/app-inventario'},
+              {name: 'VENTAS', link: '/app-ventas'}];
+
   
   ngOnInit() {
   }

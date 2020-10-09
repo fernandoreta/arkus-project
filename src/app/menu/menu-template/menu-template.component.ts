@@ -9,6 +9,9 @@ export class MenuTemplateComponent implements OnInit {
 
   constructor() { }
 
+  categorias = [{ name: 'comidas', link: '/app-comidas' },
+                { name: 'bebidas', link: '/app-bebidas' },
+                { name: 'postres', link: '/app-postres' }];
   ngOnInit() {
   }
 
