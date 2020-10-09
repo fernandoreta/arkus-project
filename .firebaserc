@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-http-2b26c": {
+      "hosting": {
+        "arkus-project": [
+          "ng-http-2b26c"
+        ]
+      }
+    }
+  }
+}

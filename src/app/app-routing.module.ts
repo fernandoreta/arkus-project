@@ -9,13 +9,18 @@ import { BebidasComponent } from './bebidas/bebidas.component';
 import { PostresComponent } from './postres/postres.component';
 import { MenuTemplateComponent } from './menu/menu-template/menu-template.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {
+    path: 'app-login',
+    component: LoginComponent
+  },
+  {
     path: 'app-menu',
     component: MenuComponent,
-    canActivate: [ AuthGuard ]
+    // canActivate: [ AuthGuard ]
   },
   {
     path: 'app-menu-template',
