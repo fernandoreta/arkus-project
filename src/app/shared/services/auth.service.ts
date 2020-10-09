@@ -1,10 +1,5 @@
   
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { AngularFireAuth } from '@angular/fire/auth';
-
-// // import { AngularFireStorage } from '@angular/fire/storage';
 
 
 @Injectable({
@@ -12,8 +7,21 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class AuthService {
 
-  public userData$: Observable<firebase.User>;
-  constructor(private afAuth: AngularFireAuth) {
-    this.userData$ = this.afAuth.authState;
+  readonly isLoggedKey = 'isLogged';
+  public urlUser = '';
+  constructor() {}
+
+  login() {
+    localStorage.setItem(this.isLoggedKey, 'true');
   }
+
+  isLoggedIn(url: string){
+    const isLogged = localStorage.getItem(this.isLoggedKey);
+    if (!isLogged) {
+      this.urlUser = url;
+      return false;
+    }
+    return true;
+  }
+  
 }

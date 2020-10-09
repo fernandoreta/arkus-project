@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'app-menu',
     component: MenuComponent,
-    // canActivate: [ AuthGuard ]
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'app-menu-template',

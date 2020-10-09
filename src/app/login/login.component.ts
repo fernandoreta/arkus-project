@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
-
-import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-login',
@@ -11,33 +9,17 @@ import { AlertService } from 'ngx-alerts';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService,
-    //public progressBar: ProgressBarService,
-    //private alertService: AlertService
-    ) { }
+  constructor(private authService: AuthService, private router: Router) { }
+  routeRedirect = '';
+  login() {
+    this.authService.login();
+    this.routeRedirect = this.authService.urlUser;
+    this.authService.urlUser = '';
+    this.router.navigate([this.routeRedirect]);
+  }
 
   ngOnInit() {
   }
 
-  onSubmit(f: NgForm) {
-    //this.alertService.info('Checking User Info');
-   // this.progressBar.startLoading();
-    const loginObserver = {
-      next: x => {
-        //this.progressBar.setSuccess();
-        console.log('User logged in');
-        //this.alertService.success('Logged In');
-       // this.progressBar.completeLoading();
-      },
-      error: err => {
-        //this.progressBar.setError();
-        console.log(err);
-        //this.alertService.danger('Unable to Login');
-        //this.progressBar.completeLoading();
-      }
-    };
-    //this.authService.login(f.value).subscribe(loginObserver);
-
-  }
 
 }
